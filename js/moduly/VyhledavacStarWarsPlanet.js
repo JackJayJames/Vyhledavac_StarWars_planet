@@ -30,6 +30,7 @@ export class VyhledavacStarWarsPlanet{
             });
     }
     _vypsatData(planety){
+        console.log(planety);
         this.vypis.innerHTML = "";
         for(const planeta of planety){
             const planeta_container = this._vytvoritPlanetaContainer(planeta);
@@ -38,6 +39,15 @@ export class VyhledavacStarWarsPlanet{
     }
     _vytvoritPlanetaContainer(planeta){
         const div = document.createElement("div");
+        div.appendChild(this._vytvorContainerHeader(planeta.name));
+
+        return div;
+    }
+    _vytvorContainerHeader(jmeno){
+        const h = document.createElement("h3");
+        h.textContent = jmeno;
+
+        return h;
     }
     kontrola(){
         console.log(this.inputElement);
