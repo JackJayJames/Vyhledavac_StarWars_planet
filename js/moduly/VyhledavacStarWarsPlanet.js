@@ -40,14 +40,20 @@ export class VyhledavacStarWarsPlanet{
     _vytvoritPlanetaContainer(planeta){
         const div = document.createElement("div");
         div.appendChild(this._vytvorContainerHeader(planeta.name));
-
+        div.appendChild(this._pridatPlanetaInfo("Klima:", planeta.climate));
+        div.appendChild(this._pridatPlanetaInfo("Počet obyvatel:", planeta.population));
+        div.appendChild(this._pridatPlanetaInfo("Terén:", planeta.terrain));
         return div;
     }
     _vytvorContainerHeader(jmeno){
         const h = document.createElement("h3");
         h.textContent = jmeno;
-
         return h;
+    }
+    _pridatPlanetaInfo(text, info){
+        const div = document.createElement("div");
+        div.textContent = `${text} ${info}`;
+        return div;
     }
     kontrola(){
         console.log(this.inputElement);
