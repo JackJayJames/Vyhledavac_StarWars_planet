@@ -30,12 +30,14 @@ export class VyhledavacStarWarsPlanet{
             });
     }
     _vypsatData(planety){
+        this.vypis.innerHTML = "";
         for(const planeta of planety){
-            this._vytvoritContainer(planeta);
+            const planeta_container = this._vytvoritPlanetaContainer(planeta);
+            this.vypis.appendChild(planeta_container);
         }
     }
-    _vytvoritContainer(planeta){
-        
+    _vytvoritPlanetaContainer(planeta){
+        const div = document.createElement("div");
     }
     kontrola(){
         console.log(this.inputElement);
