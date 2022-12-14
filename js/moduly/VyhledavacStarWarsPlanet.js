@@ -8,7 +8,23 @@ export class VyhledavacStarWarsPlanet{
         this.buttonElement = document.querySelector("#vyhledat-tlacitko");
         this.vypis = document.querySelector("#vypis");
 
+        this._obsluhaTlacitka();
         this.kontrola();
+    }
+    _obsluhaTlacitka(){
+        this.buttonElement.onclick = () => {
+            try{
+                if(this.inputElement.value === "")
+                    throw new Error("Prázdný input");
+                this._odeslatPozadavek(this.inputElement.value);
+            }
+            catch(err){
+                console.log(err);
+            }
+        };
+    }
+    _odeslatPozadavek(text){
+        console.log(text);
     }
     kontrola(){
         console.log(this.inputElement);
