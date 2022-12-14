@@ -53,7 +53,7 @@ export class VyhledavacStarWarsPlanet{
     }
     _pridatPlanetaInfo(text, info){
         const div = document.createElement("div");
-        div.textContent = `${text} ${info}`;
+        div.innerHTML = `<span>${text}</span> ${info}`;
         return div;
     }
     kontrola(){
