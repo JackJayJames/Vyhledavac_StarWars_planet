@@ -1,5 +1,6 @@
 'use strict';
 
+import { Ajax } from "./wrapper.js";
 
 export class VyhledavacStarWarsPlanet{
     constructor(){
