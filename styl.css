@@ -5,18 +5,18 @@ body{
     justify-content: center;
 }
 article{
-    border: 1px dotted red;
     width: 50%;
 }
 /*header*/
-header{
-    border: 1px dotted blue;
+header h1{
+    font-size: 30px;
+    margin: 10px 0 10px 20px;
 }
-header > p, h1{
-    margin-left: 20px;
+header p{
+    font-size: 20px;
+    margin: 5px 0 5px 10px;
 }
 #user-input-container{
-    border: 1px dotted black;
     background: rgb(109, 109, 109);
     display: flex;
     justify-content: space-evenly;
@@ -37,4 +37,7 @@ header > p, h1{
 /*styl section*/
 section{
     border: 1px dotted green;
+}
+#vypis{
+    padding: 5%;
 }
