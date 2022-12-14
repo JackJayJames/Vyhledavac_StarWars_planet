@@ -12,20 +12,30 @@ export class VyhledavacStarWarsPlanet{
         this._obsluhaTlacitka();
         this.kontrola();
     }
-    _obsluhaTlacitka(){
+    _obsluhaTlacitka(){ //Tatooine  search=${text}
         this.buttonElement.onclick = () => {
-            try{
-                if(this.inputElement.value === "")
-                    throw new Error("Prázdný input");
-                this._odeslatPozadavek(this.inputElement.value);
-            }
-            catch(err){
-                console.log(err);
-            }
+            this._odeslatPozadavek(this.inputElement.value);
         };
     }
     _odeslatPozadavek(text){
-        console.log(text);
+        Ajax.get(`https://swapi.dev/api/planets/?search=${text}`, { pocet: 5 })
+            .then((data) => {
+                if(data["count"] > 0)
+                    this._vypsatData(data["results"]);
+                else
+                    this.vypis.innerHTML = `"${text}" Nenalezeno`;
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+    }
+    _vypsatData(planety){
+        for(const planeta of planety){
+            this._vytvoritContainer(planeta);
+        }
+    }
+    _vytvoritContainer(planeta){
+        
     }
     kontrola(){
         console.log(this.inputElement);
