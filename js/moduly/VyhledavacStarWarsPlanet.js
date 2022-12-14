@@ -10,7 +10,6 @@ export class VyhledavacStarWarsPlanet{
         this.vypis = document.querySelector("#vypis");
 
         this._obsluhaTlacitka();
-        this.kontrola();
     }
     _obsluhaTlacitka(){ //Tatooine  search=${text}
         this.buttonElement.onclick = () => {
@@ -30,7 +29,6 @@ export class VyhledavacStarWarsPlanet{
             });
     }
     _vypsatData(planety){
-        console.log(planety);
         this.vypis.innerHTML = "";
         for(const planeta of planety){
             const planeta_container = this._vytvoritPlanetaContainer(planeta);
@@ -55,10 +53,5 @@ export class VyhledavacStarWarsPlanet{
         const div = document.createElement("div");
         div.innerHTML = `<span>${text}</span> ${info}`;
         return div;
-    }
-    kontrola(){
-        console.log(this.inputElement);
-        console.log(this.buttonElement);
-        console.log(this.vypis);
     }
 }
