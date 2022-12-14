@@ -39,6 +39,7 @@ export class VyhledavacStarWarsPlanet{
     }
     _vytvoritPlanetaContainer(planeta){
         const div = document.createElement("div");
+        div.className = "planeta";
         div.appendChild(this._vytvorContainerHeader(planeta.name));
         div.appendChild(this._pridatPlanetaInfo("Klima:", planeta.climate));
         div.appendChild(this._pridatPlanetaInfo("Počet obyvatel:", planeta.population));
